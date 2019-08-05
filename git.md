@@ -112,7 +112,7 @@ git 相关操作解释：
 
 如果出现错误提示：hint: See the 'Note about fast-forwards' in 'git push --help' for details.说明本地仓库和远程仓库版本不一致，则先：
 
-git pull 仓库地址
+`git pull https://github.com/zhouphenix/Docs.git`
 
 如果报错：fatal: refusing to merge unrelated histories
 
