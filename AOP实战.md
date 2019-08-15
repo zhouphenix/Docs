@@ -7,13 +7,12 @@ AOP {APT,AspectJ,Javassist}
 
 [TOC]
 
-### 一、实践篇--APT
-注解代码生成
+## 一、实践篇
+###1.   APT(AnnotationProcessor) 注解代码生成
 
-build.gradle中添加依赖：
+build.gradle中添加依赖（依赖module或jar）：
 ```
     implementation project(':ann')
-    implementation project(':aop')
     annotationProcessor project(':apt')
 ```
 
@@ -102,7 +101,24 @@ public final class InstanceFactory {
 * 2.泛型 明显不适合改注解，除非添加所有支持的构造类型
 
 
-### 二、例子篇
+
+
+#### 2.[AspectJ——简介以及在IntelliJ IDEA下的配置](AspectJ——简介以及在IntelliJ IDEA下的配置)
+【注意】：AspectJ 需要放在主module下才能生效
+
+【注意】：AspectJ 需要放在主module下才能生效
+
+【注意】：AspectJ 需要放在主module下才能生效
+
+重要的事说三遍...
+
+
+
+
+
+
+
+## 二、例子篇
 
 此篇包括大部分常用的AnnotationProcessor + javapoet使用到的情况
 通过@ExampleAnn 启用
