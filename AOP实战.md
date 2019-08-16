@@ -1,4 +1,7 @@
+
+
 # D-Annoation
+
 AOP {APT,AspectJ,Javassist}
 
 环境：idea + java + gradle
@@ -11,7 +14,7 @@ AOP {APT,AspectJ,Javassist}
 ###1.   APT(AnnotationProcessor) 注解代码生成
 
 build.gradle中添加依赖（依赖module或jar）：
-```
+```groovy
     implementation project(':ann')
     annotationProcessor project(':apt')
 ```
@@ -19,13 +22,13 @@ build.gradle中添加依赖（依赖module或jar）：
 使用方式：
 
 
-```
+```java
 @InstanceAnns({
         @InstanceAnn,
         @InstanceAnn("java.lang.Object"),
         @InstanceAnn({"java.lang.Object", "java.lang.String"})
 })
-public class TestAnn 
+public class TestAnn {}
 
 ```
 
@@ -113,9 +116,166 @@ public final class InstanceFactory {
 重要的事说三遍...
 
 
+#### 3.[自定义Gradle-Plugin 插件详解-Javassist](https://www.jianshu.com/p/f1bd232e7a62)
+
+Gradle自定义插件三种方式：
+
+1. build.gradle脚本中直接使用。这种方式就是直接在Android Studio app moudle的build.gradle 中进行插件的编写，优点就是不用再上传插件到maven或者其它地方，项目就可以直接使用；缺点也是很明显，就是只能在自己的项目中使用，不能复用，这个不是我们今天要说的。
+
+2. buildSrc中使用。这种方式需要在项目中新建一个moudle命名为buildSrc，这个目录就用来存放自定义插件。然后在src/main中建立两个目录，一个就是存放代码的groovy目录，一个是存放自定义插件名称的resources目录。这种定义方式也是只能在我们项目中进行使用，不好复用。 
+
+3. 独立Module中使用。这种方式就是完全独立开发一个Module，可以随便用。 
+
+   
+
+##### 3.1 build.gradle脚本中直接使用
+
+把插件写在build.gradle 文件中，一般用于简单的逻辑，只在改build.gradle 文件中可见，这里直接贴出Demo代码： 
+
+```groovy
+/**
+ * 插件入口类
+ */
+class TestPlugin implements Plugin<Project> {
+    @Override
+    void apply(Project project) {
+        //do something
+    }
+}
+
+apply plugin: TestPlugin
+```
 
 
 
+##### 3.2 buildSrc中使用
+
+######  3.2.1新建一个 module，选择 library module，module 名字必须为 buildSrc
+
+###### 3.2.2删除 module 下所有文件，build.gradle 配置替换如下：
+
+```
+plugins{
+    id 'groovy'
+}
+
+group rootProject.group
+version '1.0-SNAPSHOT'
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+}
+
+```
+
+######  3.2.3新建 groovy 目录 
+
+ ![groovy目录](RES/1565948651743.png)
+
+######  3.2.4新建 Plugin 类 
+
+需要注意： groovy 目录下新建类，需要选择 file且以`.groovy`作为文件格式。 
+
+```groovy
+package com.phenix.plugin
+
+import org.gradle.api.Plugin
+import org.gradle.api.Project
+
+class PhenixPlugin implements Plugin<Project>{
+    @Override
+    void apply(Project project) {
+
+        println "=========================="
+        println "Javassist开始修改class"
+        println "=========================="
+
+        project.logger.debug("===============PhenixPlugin================")
+    }
+}
+```
+
+主module中引用 `apply plugin: PhenixPlugin`  gradle build
+
+```
+> Task :buildSrc:compileJava NO-SOURCE
+> Task :buildSrc:compileGroovy UP-TO-DATE
+> Task :buildSrc:processResources UP-TO-DATE
+> Task :buildSrc:classes UP-TO-DATE
+> Task :buildSrc:jar UP-TO-DATE
+> Task :buildSrc:assemble UP-TO-DATE
+> Task :buildSrc:compileTestJava NO-SOURCE
+> Task :buildSrc:compileTestGroovy NO-SOURCE
+> Task :buildSrc:processTestResources NO-SOURCE
+> Task :buildSrc:testClasses UP-TO-DATE
+> Task :buildSrc:test NO-SOURCE
+> Task :buildSrc:check UP-TO-DATE
+> Task :buildSrc:build UP-TO-DATE
+
+> Configure project :
+==========================
+Javassist开始修改class
+==========================
+```
+
+##### 3.3独立Module中使用
+
+直接在buildSrc module中修改
+
+![项目结构](RES/15659497794513.png)
+
+配置repository，供其他project引用
+
+build.gradle中
+
+```groovy
+plugins{
+    id 'groovy'
+    //上传插件
+    id 'maven'
+}
+
+group rootProject.group
+version '1.0-SNAPSHOT'
+
+dependencies {
+    // https://mvnrepository.com/artifact/javassist/javassist
+//    compile group: 'javassist', name: 'javassist', version: '3.12.1.GA'
+
+    compile gradleApi()
+    compile localGroovy()
+}
+
+//上传task
+uploadArchives{
+    repositories {
+        mavenDeployer{
+            repository(url: uri('./../repo'))
+        }
+    }
+}
+```
+
+resources文件夹下新建META-INF/gradle-plugins/phenix.properties，文件名称即为插件名称， 内容：
+
+```
+implementation-class=com.phenix.plugin.PhenixPlugin
+```
+
+执行task： uploadArchives
+
+![uploadArchives 上传本地repository](RES/15659500647369.png)
+
+引用插件
+
+```groovy
+plugins {
+    //...
+    // 自定义插件
+    id 'phenix'
+   }
+```
 
 
 ## 二、例子篇
