@@ -39,6 +39,8 @@ mainClassName = 'com.xx.Main' //配置主类
 
 ![生成META-INF文件](RES/15669012783050.png)
 
+确保Alt+左键 能够正常索引到main方法才能保证执行jar包时找到入口
+
 ###### 4.3 build jar
 
 Build菜单 > Build Artifacts... >Action 
