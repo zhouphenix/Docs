@@ -107,11 +107,11 @@ public final class InstanceFactory {
 
 
 #### 2.[AspectJ——简介以及在IntelliJ IDEA下的配置](AspectJ——简介以及在IntelliJ IDEA下的配置)
-【注意】：AspectJ 需要放在主module下才能生效
+【注意】：AspectJ 需要放在主module下
 
-【注意】：AspectJ 需要放在主module下才能生效
+【注意】：AspectJ 需要放在主module下
 
-【注意】：AspectJ 需要放在主module下才能生效
+【注意】：AspectJ 需要放在主module下
 
 重要的事说三遍...
 
