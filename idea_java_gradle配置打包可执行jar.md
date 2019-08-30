@@ -49,6 +49,14 @@ mainClassName = 'com.xx.Main' //配置主类
 
 ![指定的class文件构建Jar](RES/15671333038763.png)
 
+【注意】重新打包jar记得修改版本号或名称，否则一直使用的缓存
+
+【注意】重新打包jar记得修改版本号或名称，否则一直使用的缓存
+
+【注意】重新打包jar记得修改版本号或名称，否则一直使用的缓存
+
+重要的事说三遍...
+
 ###### 4.3 build jar
 
 Build菜单 > Build Artifacts... >Action 
