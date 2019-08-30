@@ -25,13 +25,17 @@ mainClassName = 'com.xx.Main' //配置主类
 
 ##### 4.配置Artifacts 打包jar
 
-###### 4.1 Project Structure > add jar
+###### 4.1.1 方式一：from modules with dependencies...
+
+ Project Structure > add jar
+
+
 
 ![Add jar](RES/15669004041553.png)
 
 
 
-###### 4.2 create jar
+###### 4.1.2 create jar
 
 ![Create JAR from Modules](RES/15669008043731.png)
 
@@ -40,6 +44,10 @@ mainClassName = 'com.xx.Main' //配置主类
 ![生成META-INF文件](RES/15669012783050.png)
 
 确保Alt+左键 能够正常索引到main方法才能保证执行jar包时找到入口
+
+###### 4.2.1 方式二：Empty 选择指定的class文件构建Jar
+
+![指定的class文件构建Jar](RES/15671333038763.png)
 
 ###### 4.3 build jar
 
