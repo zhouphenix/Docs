@@ -32,3 +32,7 @@
 ## 五、IDEA Gradle Java
 
 ### 1.[idea_java_gradle配置打包可执行jar](idea_java_gradle配置打包可执行jar.md)
+
+## 六、Gradle插件开发
+
+### 1.[IDEA_Gradle_Plugin插件开发](IDEA_Gradle_Plugin插件开发.md)
