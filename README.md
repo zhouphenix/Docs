@@ -36,3 +36,9 @@
 ## 六、Gradle插件开发
 
 ### 1.[IDEA_Gradle_Plugin插件开发](IDEA_Gradle_Plugin插件开发.md)
+
+## 七、常用软件或命令
+
+### 1.[常用软件](常用软件.md)
+
+## 2.[git用ssh方式下载和提交代码](git用ssh方式下载和提交代码.md)
