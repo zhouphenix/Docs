@@ -30,6 +30,17 @@ npm run dev
 # 全局安装vue脚手架 npm install -g vue-cli 需要翻墙
 npm install -g vue-cli 
 
+# 如果之前已经安装过旧版本（非3.x）脚手架，需要卸载旧版本：
+npm uninstall vue-cli -g
+# 安装脚手架，用于生成项目
+npm install -g @vue/cli
+#yarn 安装
+yarn global add @vue/cli
+yarn global add @vue/cli-init
+#快速原型开发，编译.vue文件
+npm install -g @vue/cli-service-global
+
+
 #  创建一个基于 webpack 模板的新项目
  vue init webpack phenix
  ...
@@ -37,9 +48,14 @@ npm install -g vue-cli
  yarn
  yarn start
  
+#vue-cli3
+vue create my-project
+ 
  
  
 ```
+
+### 1.1[使用 vue-cli 3 快速创建 Vue 项目](使用 vue-cli 3 快速创建 Vue 项目.md)
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
@@ -93,9 +109,9 @@ yarn add iview
 ## 四、Vue.js Ajax(axios)
 
  Vue.js 2.0 版本推荐使用 axios 来完成 ajax 请求。
- 
+
  Axios 是一个基于 Promise 的 HTTP 库，可以用在浏览器和 node.js 中。
- 
+
  Github开源地址： https://github.com/axios/axios
 
 ```
@@ -138,7 +154,7 @@ handleSubmit(name) {
 
 ## 附件：
 
-#### 1.npm 和yarn比较
+### 1.npm 和yarn比较
 
 |                 npm                  |             yarn              |             用法             |
 | :----------------------------------: | :---------------------------: | :--------------------------: |
@@ -153,9 +169,17 @@ handleSubmit(name) {
 ![npm 和yarn比较](RES/3029162-b71cccb4632a07ad.webp)
 
 
-#### 2.Vue 调用子组件方法
+### 2.Vue 调用子组件方法
 ```vue
 this.$refs.fb.setText(txt)
 this.$refs[name].setText(txt)
 
 ```
+
+
+
+### 3.缺少windows构建插件**
+
+
+
+**解决方法：在命令行工具中运行：npm install –global –production windows-build-tools （全局安装windows构建工具）**
