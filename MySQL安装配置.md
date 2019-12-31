@@ -1,5 +1,9 @@
 # MySQL 安装
 
+[toc]
+
+
+
 所有平台的 MySQL 下载地址为： [MySQL 下载](https://dev.mysql.com/downloads/mysql/) 。 挑选你需要的 *MySQL Community Server* 版本及对应的平台。
 
 > **注意：**安装过程我们需要通过开启管理员权限来安装，否则会由于权限不足导致无法安装。
@@ -310,3 +314,98 @@ ERROR 1820 (HY000): You must reset your password using ALTER USER statement befo
 1、 修改用户密码
 `mysql> alter user 'root'@'localhost' identified by 'youpassword';`  
 
+## 局域网共享mysql
+
+mysql8.0无法给用户授权或提示You are not allowed to create a user with GRANT的问题
+
+提示意思是不能用grant创建用户，mysql8.0以前的版本可以使用grant在授权的时候隐式的创建用户，8.0以后已经不支持，所以必须先创建用户，然后再授权，命令如下：
+
+```
+mysql> CREATE USER 'root'@'%' IDENTIFIED BY 'Hadoop3!';
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> grant all privileges on *.* to 'root'@'%';
+Query OK, 0 rows affected (0.03 sec)
+```
+
+另外，如果远程连接的时候报plugin caching_sha2_password could not be loaded这个错误，可以尝试修改密码加密插件：
+
+```
+ mysql> alter user 'root'@'%' identified with mysql_native_password by 'Hadoop3!';
+```
+
+ 或者
+
+1. 主机更改访问权限
+
+在mysql shell或者Navicat中输入
+
+```sql
+use mysql;select * from user;
+```
+
+![img](E:\WONI\Git\Docs\images\70)
+
+如果如上图所示 应该更改host名称，使得任意IP可以访问C1数据库
+
+```sql
+update user set host = '%' where user = 'root';
+```
+
+更改完成最好重启一下mysql
+
+windows下方法：
+
+  win+R输入services.msc在里面找到MySQL右击重启
+
+ 
+
+2.更改主机防火墙
+
+  打开windowsDefender防火墙->高级设置->入栈规则->新建规则
+
+![img](E:\WONI\Git\Docs\images\71)
+
+![img](E:\WONI\Git\Docs\images\72)
+
+ 
+
+3.查询主机IP地址
+
+注意保证客机和主机在同一局域网下！！
+
+打开网络和共享中心->点击下图位置->详细信息
+
+![img](https://img-blog.csdn.net/20180614185013187?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2RhbmRlbGlvbl9jbGF3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+![img](E:\WONI\Git\Docs\images\73)
+
+红色码的位置（IPv4地址）就是主机IP地址
+
+![img](E:\WONI\Git\Docs\images\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2RhbmRlbGlvbl9jbGF3,size_16,color_FFFFFF,t_70)
+
+ 
+
+4.客机建立连接
+
+注意在这步之前主机一定要激活连接！！！
+
+**方法一：Navicat里连接方法**
+
+连接->MySql
+
+![img](E:\WONI\Git\Docs\images\74)
+
+注意主机IP地址不可以有多余的空格 否则会连接失败
+
+ 
+
+方法二：在mysql shell中连接
+
+输入
+
+```sql
+mysql -h （主机IP地址） -P 3306 -u （主机用户名） -p（主机密码）
+```
+
+注意主机密码和-p是要连在一起的 例如-p123
