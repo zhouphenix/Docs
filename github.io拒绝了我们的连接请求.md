@@ -1,6 +1,6 @@
 # github.io拒绝了我们的连接请求
 
-【转】[[访问github个人博客时*.github.io 拒绝了我们的连接请求，错误码403](https://www.cnblogs.com/hudunyu/p/14346032.html)](https://www.cnblogs.com/hudunyu/p/14346032.html)
+【转】[[访问github个人博客时*.github.io 拒绝了我们的连接请求，错误码403](https://www.cnblogs.com/hudunyu/p/14346032.html)
 
 ![github.io拒绝了连接请求](.\images\75.png)
 

@@ -1,5 +1,5 @@
 ## Docs
-学习文档管理
+学习文档管理  文档地址https://zhouphenix.github.io/Docs/
 
 **目的：整理学习过的知识，方便查找相关的知识点**
 
@@ -63,6 +63,6 @@
 
 #### 1 . 工具类 
 
-+ [docsifyjs](https://github.com/docsifyjs)/**[docsify 文档生成工具，支持github](https://github.com/docsifyjs/docsify)**
++ [docsifyjs](https://github.com/docsifyjs)/**[docsify 文档生成工具，支持github](https://github.com/docsifyjs/docsify)** [文档地址](https://docsify.js.org/#/quickstart)
 
 ![81](.\images\81.jpg)
