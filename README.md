@@ -1,68 +1,19 @@
-## Docs
-学习文档管理  文档地址https://zhouphenix.github.io/Docs/
+![https://vkceyugu.cdn.bspapp.com/VKCEYUGU-058ebae7-a716-4285-8709-0a66576daf9f/a937db9b-d7c0-40a4-a43d-23c5ff423b76.png](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-058ebae7-a716-4285-8709-0a66576daf9f/a937db9b-d7c0-40a4-a43d-23c5ff423b76.png)
 
-**目的：整理学习过的知识，方便查找相关的知识点**
+# 													V587 系列
 
-**托管工具：[Github](https://github.com)**  **地址：** https://github.com/zhouphenix/Docs
+​																																											作者： *phenix*- [我的文档]( https://zhouphenix.github.io/Docs/#/index)
 
-**项目实战：https://github.com/zhouphenix/D-Annoation**
-
-[TOC]
-
-### 一、GIT工具的使用
-
-#### 1.[如何在github上管理自己的项目](git.md)
-
-#### 2.[git用ssh方式下载和提交代码](git用ssh方式下载和提交代码.md)
-
-### 二、AOP
-
-#### 1.[JavaPoet使用详解](JavaPoet使用详解.md)
-
-#### 2.[AOP实战](AOP实战.md)
-
-### 三、Nginx配置
-
-#### 1.[Nginx本地局域网配置](Nginx.md)
-
-### 四、yarn+Vue
-
-#### 1.[yarn管理vue](yarn_vue.md)
+### 应用列表
 
 
 
-### 五、IDEA Gradle Java
 
-#### 1.[idea_java_gradle配置打包可执行jar](idea_java_gradle配置打包可执行jar.md)
-
-### 六、Gradle插件开发
-
-#### 1.[IDEA_Gradle_Plugin插件开发](IDEA_Gradle_Plugin插件开发.md)
-
-### 七、常用软件或命令
-
-#### 1.[常用软件](常用软件.md)
+|    名称    |                             图标                             |                             介绍                             |  作者  | 图片                                                         |
+| :--------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----: | ------------------------------------------------------------ |
+| 一起来猜歌 | ![https://vkceyugu.cdn.bspapp.com/VKCEYUGU-058ebae7-a716-4285-8709-0a66576daf9f/7833e25c-16db-428a-ae77-32fc1834a75e.png](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-058ebae7-a716-4285-8709-0a66576daf9f/7833e25c-16db-428a-ae77-32fc1834a75e.png) | 应用名称 一起来猜歌<br/>英文名称 Song King<br/>应用描述 听歌识曲<br/>英文描述 Listen to songs to identify tracks<br/>[应用官网]( https://github.com/zhouphenix/Docs) | phenix | <img src="https://img-cdn-aliyun.dcloud.net.cn/stream/plugin_screens/uni-songgame_0.PNG?v=1619350989" alt="登录页" style="zoom:10%;" /><img src="https://img-cdn-aliyun.dcloud.net.cn/stream/plugin_screens/uni-songgame_1.PNG?v=1619350989" alt="听歌识曲页" style="zoom:10%;" /><img src="https://img-cdn-aliyun.dcloud.net.cn/stream/plugin_screens/uni-songgame_2.PNG?v=1619350989" alt="听歌识曲页2" style="zoom:10%;" /><img src="https://img-cdn-aliyun.dcloud.net.cn/stream/plugin_screens/uni-songgame_3.PNG?v=1619350989" alt="听歌识曲页3" style="zoom:10%;" /><img src="https://img-cdn-aliyun.dcloud.net.cn/stream/plugin_screens/uni-songgame_4.PNG?v=1619350989" alt="听歌识曲页3" style="zoom:10%;" /> |
+|            |                                                              |                                                              |        |                                                              |
+|            |                                                              |                                                              |        |                                                              |
 
 
 
-### 八、MySQL
-
-#### 1.[MySQL安装配置](MySQL安装配置.md)
-
-### 九、BAT
-
-#### 1.bat[命令](bat命令.md)
-
-### 十、Redis
-
-#### 1、[redis安装配置](redis安装配置.md)
-
-### 十一、[问题集](问题集.md)
-
-### 十二、推荐栏
-
-#### 1 . 工具类 
-
-+ [docsifyjs](https://github.com/docsifyjs)/**[docsify 文档生成工具，支持github](https://github.com/docsifyjs/docsify)** [文档地址](https://docsify.js.org/#/quickstart)
-
-![81](.\images\81.jpg)
