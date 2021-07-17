@@ -10,7 +10,13 @@
 
 [TOC]
 
-### 一、GIT工具的使用
+
+
+### 一、常用软件或命令
+
+#### 1.[常用软件](常用软件.md)
+
+### 二、GIT工具的使用
 
 #### 1.[如何在github上管理自己的项目](git.md)
 
@@ -18,35 +24,27 @@
 
 #### 3.[github不能访问](github不能访问.md)
 
-### 二、AOP
+### 三、AOP
 
 #### 1.[JavaPoet使用详解](JavaPoet使用详解.md)
 
 #### 2.[AOP实战](AOP实战.md)
 
-### 三、Nginx配置
+### 四、Nginx配置
 
 #### 1.[Nginx本地局域网配置](Nginx.md)
 
-### 四、yarn+Vue
+### 五、yarn+Vue
 
 #### 1.[yarn管理vue](yarn_vue.md)
 
-
-
-### 五、IDEA Gradle Java
+### 六、IDEA Gradle Java
 
 #### 1.[idea_java_gradle配置打包可执行jar](idea_java_gradle配置打包可执行jar.md)
 
-### 六、Gradle插件开发
+### 七、Gradle插件开发
 
 #### 1.[IDEA_Gradle_Plugin插件开发](IDEA_Gradle_Plugin插件开发.md)
-
-### 七、常用软件或命令
-
-#### 1.[常用软件](常用软件.md)
-
-
 
 ### 八、MySQL
 
